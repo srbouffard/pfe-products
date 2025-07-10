@@ -21,6 +21,20 @@ This repository uses a "docs-as-code" approach. The workflow is fully automated:
 
 ---
 
+## 📂 Repository Structure
+
+Here is a breakdown of the key files and directories in this project:
+
+* `README.md`: You are here! This file provides the main overview of the project.
+* `CONTRIBUTING.md`: Detailed instructions on how to add or update product definitions.
+* `/products/`: Contains all the product definition YAML files, with one file per product. This is the core data of the repository.
+* `/docs/`: Contains templates and configuration (`conf.py`) for generating the documentation pages.
+* `/scripts/`: Holds the Python script (`build_product_pages.py`) responsible for converting the YAML data into documentation files.
+* `/.github/workflows/`: Defines the GitHub Actions CI/CD pipeline that automates the entire documentation generation and PR creation process.
+* `.gitignore`: Specifies which files and folders should be ignored by Git.
+
+---
+
 ## 🚀 How to Contribute
 
 We encourage all team members to help keep this information current! The process is simple and follows standard Git practices.
