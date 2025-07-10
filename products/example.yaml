@@ -1,0 +1,83 @@
+# A simple integer or semantic version to track the schema.
+schema_version: 1
+
+# The official, human-readable name of the product.
+product_name: "My Awesome Product"
+
+# A unique, machine-friendly identifier for the product (lowercase, kebab-case).
+# Ideal for JIRA labels, GitHub topics, etc.
+product_title: "my-awesome-product"
+
+# A brief, one or two-sentence summary of the product's purpose.
+product_description: "This product provides an amazing service for doing X and Y, primarily for internal development teams."
+
+# Details about team ownership and key contacts.
+ownership:
+  # The PFE squad responsible for the product's codebase and maintenance.
+  squad: "Alpha Squad"
+  # A list of key individuals (Product Managers, Tech Leads, etc.).
+  stakeholders:
+    - name: "Jane Doe"
+      role: "Product Manager"
+      contact: "jane.doe@example.com"
+    - name: "John Smith"
+      role: "Tech Lead"
+      contact: "john.smith@example.com"
+
+# Communication channels for support and development discussions.
+communication:
+  - type: "MatterMost"
+    channel: "#my-awesome-product-support"
+    url: "https://chat.example.com/channel/my-awesome-product-support"
+  - type: "Matrix"
+    channel: "#my-awesome-product-dev"
+    url: "https://matrix.to/#/#my-awesome-product-dev:example.com"
+
+# The core software building blocks of the product.
+components:
+  # A list of charms that are part of this product.
+  charms:
+    - "awesome-charm-1"
+    - "awesome-charm-2"
+  # A list of snaps that are part of this product.
+  snaps:
+    - "awesome-snap-1"
+
+# Centralized links to important resources. The product_title can be used by your
+# generator to dynamically create the repo and JIRA links.
+links:
+  # Link to all related repositories (via a GitHub topic search).
+  repositories: "https://github.com/your-org?q=topic:my-awesome-product"
+  # Link to JIRA issues tagged with the product_title.
+  jira_issues: "https://your-jira.com/issues/?jql=labels%20%3D%20my-awesome-product"
+  # Direct links to primary documentation.
+  documentation:
+    - name: "User Guide"
+      url: "https://docs.example.com/my-awesome-product/"
+    - name: "Technical Reference"
+      url: "https://docs.example.com/my-awesome-product/technical/"
+  # Links to relevant design specs or planning documents.
+  specs:
+    - name: "Q3 2025 Roadmap"
+      url: "https://docs.google.com/document/d/..."
+
+# A list of environments where this product is deployed and operated by your team.
+deployments:
+  - environment_name: "Staging"
+    # The Juju model where the application is deployed.
+    juju_model: "pfe-staging:my-awesome-product-staging"
+    # Endpoints to access the application in this environment.
+    urls:
+      - name: "Dashboard UI"
+        url: "https://staging.my-awesome-product.example.com"
+      - name: "API Endpoint"
+        url: "https://api.staging.my-awesome-product.example.com"
+    # A flexible key-value store for other relevant details.
+    deployment_specifics:
+      prodstack: "LMA-stack-v3"
+      notes: "Refreshed from production backups weekly."
+  - environment_name: "Production"
+    juju_model: "pfe-prod:my-awesome-product-prod"
+    urls:
+      - name: "Dashboard UI"
+        url: "https://my-awesome-product.example.com"

@@ -1,0 +1,40 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment folders
+# Add your environment name here if it's different
+venv/
+.venv/
+env/
+.env/
+env.bak/
+venv.bak/
+
+# Documentation build output
+# Sphinx/Read the Docs typically uses _build
+docs/_build/
+site/
+
+# Python package distribution files
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Secrets and environment variables
+# IMPORTANT: Never commit secrets!
+.env
+*.env.*
+
+# Editor and IDE configuration files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
