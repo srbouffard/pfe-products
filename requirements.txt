@@ -4,3 +4,4 @@ jinja2
 
 # Dependency for local documentation preview
 sphinx
+sphinx_rtd_theme

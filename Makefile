@@ -40,6 +40,7 @@ preview: generate
 	@echo "--> Building HTML documentation..."
 	@$(SPHINX) docs docs/_build/html
 	@echo "✅ Build complete. Open docs/_build/html/index.html in your browser."
+	@xdg-open docs/_build/html/index.html
 
 # Target to clean up the project
 clean:
