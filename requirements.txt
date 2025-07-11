@@ -1,0 +1,6 @@
+# Core dependencies for the script
+pyyaml
+jinja2
+
+# Dependency for local documentation preview
+sphinx

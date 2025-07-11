@@ -1,0 +1,37 @@
+# --- Product Definition Template ---
+# For detailed explanations of each field, see PRODUCT_SCHEMA.md
+schema_version: 1
+product_name: ""
+product_title: ""
+product_description: ""
+ownership:
+  squad: ""
+  stakeholders:
+    - name: ""
+      role: ""
+      contact: ""
+communication:
+  - type: ""
+    channel: ""
+    url: ""
+    description: ""
+    public: true
+components:
+  - name: ""
+    type: ""
+    repository: ""
+links:
+  - name: ""
+    url: ""
+deployments:
+  - environment_name: ""
+    managed_by: ""
+    terraform_link: ""
+    juju_models:
+      - ""
+    urls:
+      - name: ""
+        url: ""
+    deployment_specifics:
+      prodstack: ""
+      notes: ""

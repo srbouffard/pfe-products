@@ -1,3 +1,8 @@
+# Product Schema Definition
+
+This document defines the required schema for all `.yaml` files in the `/products` directory.
+
+```yaml
 # A simple integer or semantic version to track the schema.
 schema_version: 1
 
@@ -28,78 +33,46 @@ ownership:
 communication:
   - type: "MatterMost"
     channel: "#my-awesome-product-support"
-    url: "https://chat.example.com/channel/my-awesome-product-support"
+    url: "[https://chat.example.com/channel/my-awesome-product-support](https://chat.example.com/channel/my-awesome-product-support)"
     description: "Public channel for user support and questions."
     public: true
   - type: "Matrix"
     channel: "#my-awesome-product-dev"
-    url: "https://matrix.to/#/#my-awesome-product-dev:example.com"
+    url: "[https://matrix.to/#/#my-awesome-product-dev:example.com](https://matrix.to/#/#my-awesome-product-dev:example.com)"
     description: "Private channel for development discussions."
     public: false
 
 # The core software building blocks of the product.
-# TODO: Should be a list of components with a type field instead
-# TODO: Should probably have a ref to the project repo?
-# TODO: Could be fetched automatically maybe?
 components:
   - name: "awesome-charm-1"
     type: "charm"
-    repository: "https://github.com/your-org/awesome-charm-1"
-  - name: "awesome-charm-2"
-    type: "charm"
-    repository: "https://github.com/your-org/awesome-charm-2"
+    repository: "[https://github.com/your-org/awesome-charm-1](https://github.com/your-org/awesome-charm-1)"
   - name: "awesome-snap-1"
     type: "snap"
-    repository: "https://github.com/your-org/awesome-snap-1"
+    repository: "[https://github.com/your-org/awesome-snap-1](https://github.com/your-org/awesome-snap-1)"
 
-# Centralized links to important resources.
-# The build script should generate the repositories and jira_issues links dynamically based off the project title.
+# A dynamic list of important links related to the product.
 links:
   - name: "Documentation Landing Page"
-    url: "https://docs.example.com/my-awesome-product/"
+    url: "[https://docs.example.com/my-awesome-product/](https://docs.example.com/my-awesome-product/)"
   - name: "Q3 2025 Roadmap"
-    url: "https://docs.google.com/document/d/..."
+    url: "[https://docs.google.com/document/d/](https://docs.google.com/document/d/)..."
 
-# A list of environments where this product is deployed and operated by your team.
-deployments:
-## TODO: This should be lower case
-  - environment_name: "Staging"
-    # The Juju model where the application is deployed.
-    ## TODO: This should be a list of models, with a link to the proper terraform?
-    ## TODO: Maybe the terraform is a standalone entry within the deployment object
-    juju_model: "pfe-staging:my-awesome-product-staging"
-    # Endpoints to access the application in this environment.
-    urls:
-      - name: "Dashboard UI"
-        url: "https://staging.my-awesome-product.example.com"
-      - name: "API Endpoint"
-        url: "https://api.staging.my-awesome-product.example.com"
-    # A flexible key-value store for other relevant details.
-    deployment_specifics:
-      prodstack: "LMA-stack-v3"
-      notes: "Refreshed from production backups weekly."
-  - environment_name: "Production"
-    juju_model: "pfe-prod:my-awesome-product-prod"
-    urls:
-      - name: "Dashboard UI"
-        url: "https://my-awesome-product.example.com"
-    ## TODO: Add "managed by" field
-
-# A list of environments where this product is deployed and operated by your team.
+# A list of environments where this product is deployed.
 deployments:
   - environment_name: "staging"
     managed_by: "PFE"
     # Link to the terraform code that defines the environment's infrastructure.
-    terraform_link: "https://github.com/your-org/ops/tree/main/staging/awesome-product"
+    terraform_link: "[https://github.com/your-org/ops/tree/main/staging/awesome-product](https://github.com/your-org/ops/tree/main/staging/awesome-product)"
     # The Juju models where the application is deployed.
     juju_models:
       - "pfe-staging:my-awesome-product-staging"
     # Endpoints to access the application in this environment.
     urls:
       - name: "Dashboard UI"
-        url: "https://staging.my-awesome-product.example.com"
+        url: "[https://staging.my-awesome-product.example.com](https://staging.my-awesome-product.example.com)"
       - name: "API Endpoint"
-        url: "https://api.staging.my-awesome-product.example.com"
+        url: "[https://api.staging.my-awesome-product.example.com](https://api.staging.my-awesome-product.example.com)"
     # A flexible key-value store for other relevant details.
     deployment_specifics:
       prodstack: "LMA-stack-v3"
@@ -110,4 +83,5 @@ deployments:
       - "pfe-prod:my-awesome-product-prod"
     urls:
       - name: "Dashboard UI"
-        url: "https://my-awesome-product.example.com"
+        url: "[https://my-awesome-product.example.com](https://my-awesome-product.example.com)"
+```

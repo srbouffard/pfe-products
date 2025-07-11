@@ -1,0 +1,85 @@
+# A simple integer or semantic version to track the schema.
+schema_version: 2
+
+# The official, human-readable name of the product.
+product_name: "My Awesome Product"
+
+# A unique, machine-friendly identifier for the product (lowercase, kebab-case).
+# Ideal for JIRA labels, GitHub topics, etc.
+product_title: "my-awesome-product"
+
+# A brief, one or two-sentence summary of the product's purpose.
+product_description: "This product provides an amazing service for doing X and Y, primarily for internal development teams."
+
+# Details about team ownership and key contacts.
+ownership:
+  # The PFE squad responsible for the product's codebase and maintenance.
+  squad: "Alpha Squad"
+  # A list of key individuals (Product Managers, Tech Leads, etc.).
+  stakeholders:
+    - name: "IS"
+      role: "Team"
+      contact: "~IS" # Can be a MM channel too
+    - name: "John Smith"
+      role: "Tech Lead"
+      contact: "john.smith@canonical.com"
+
+# Communication channels for support and development discussions.
+communication:
+  - type: "MatterMost"
+    channel: "#my-awesome-product-support"
+    url: "https://chat.example.com/channel/my-awesome-product-support"
+    description: "Public channel for user support and questions."
+    public: true
+  - type: "Matrix"
+    channel: "#my-awesome-product-dev"
+    url: "https://matrix.to/#/#my-awesome-product-dev:example.com"
+    description: "Private channel for development discussions."
+    public: false
+
+# The core software building blocks of the product.
+components:
+  - name: "awesome-charm-1"
+    type: "charm"
+    repository: "https://github.com/your-org/awesome-charm-1"
+  - name: "awesome-charm-2"
+    type: "charm"
+    repository: "https://github.com/your-org/awesome-charm-2"
+  - name: "awesome-snap-1"
+    type: "snap"
+    repository: "https://github.com/your-org/awesome-snap-1"
+
+# A dynamic list of important links.
+# The build script can dynamically add other generated links (e.g., for Repos & JIRA).
+links:
+  - name: "Documentation Landing Page"
+    url: "https://docs.example.com/my-awesome-product/"
+  - name: "Q3 2025 Roadmap"
+    url: "https://docs.google.com/document/d/..."
+
+# A list of environments where this product is deployed.
+deployments:
+  - environment_name: "staging"
+    managed_by: "PFE"
+    # Link to the terraform code that defines the environment's infrastructure.
+    terraform_link: "https://github.com/your-org/ops/tree/main/staging/awesome-product"
+    # The Juju models where the application is deployed.
+    juju_models:
+      - "pfe-staging:my-awesome-product-staging"
+    # Endpoints to access the application in this environment.
+    urls:
+      - name: "Dashboard UI"
+        url: "https://staging.my-awesome-product.example.com"
+      - name: "API Endpoint"
+        url: "https://api.staging.my-awesome-product.example.com"
+    # A flexible key-value store for other relevant details.
+    deployment_specifics:
+      prodstack: "LMA-stack-v3"
+      notes: "Refreshed from production backups weekly."
+  - environment_name: "production"
+    managed_by: "IS"
+    juju_models:
+      - "pfe-prod:my-awesome-product-prod"
+    urls:
+      - name: "Dashboard UI"
+        url: "https://my-awesome-product.example.com"
