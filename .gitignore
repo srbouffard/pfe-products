@@ -38,3 +38,7 @@ dist/
 # OS-generated files
 .DS_Store
 Thumbs.db
+
+# Documentation build output
+docs/_build/
+docs/products/
